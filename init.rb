@@ -1,1 +1,1 @@
-require 'SMSgupshupy'
+require 'Gupshupy'
