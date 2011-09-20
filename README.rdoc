@@ -1,0 +1,27 @@
+= gupshupy
+
+gupshupy is an acts_as module for the SMSGupShup's HTTP send SMS API.
+
+== Usage
+  # in your model, say in User model
+  class User < ActiveRecord::Base
+    acts_as_gupshupy :userid => 'your_gupshup_id', :password => 'your_password'
+  end
+
+  # and then start sending messages
+  u = User.first
+  u.send_sms("your message here")
+
+  # it uses mobile_number as column name by default, but you can change it
+  acts_as_gupshupy :userid => 'your_gupshup_id', :password => 'your_password', :mobile_number_field => :phone_number
+
+
+== Installation
+sudo gem install gupshupy
+
+== Requirements
+* httpclient
+
+== License
+Released under MIT License, see MIT-LICENSE for details.
+Copyright (c) 2011 Abhinav Saxena
